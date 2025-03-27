@@ -122,13 +122,7 @@ def cmd_docker_images_cleanup(args):
 
 def cmd_all_python_build_package(args):
     """Build wheel packages for all examples and templates"""
-    final_dist_directory = (THIS_DIRECTORY / "dist")
-    final_dist_directory.mkdir(exist_ok=True)
-    for project_dir in TEMPLATE_DIRECTORIES:
-        run_verbose([sys.executable, "setup.py", "bdist_wheel", "--universal", "sdist"], cwd=str(project_dir))
-
-        wheel_file = next(project_dir.glob("dist/*.whl"))
-        shutil.copy(wheel_file, final_dist_directory)
+    run_verbose(["uv", "build"])
 
 
 def check_deps(template_package_json, current_package_json):

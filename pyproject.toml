@@ -1,6 +1,6 @@
 [project]
 name = "streamlit-editable-table"
-version = "0.1.2"
+version = "0.1.0"
 description = "Streamlit component that allows you to do display and edit a table"
 readme = "README.md"
 requires-python = ">=3.9"
